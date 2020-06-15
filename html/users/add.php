@@ -6,7 +6,7 @@ if (!$db) {
     die('Could not load database!');
 }
 
-if (hasValue($_POST['first_name'])) {
+if (hasValue($_POST['first-name'])) {
     $first_name = $_POST['first-name'];
     $last_name = $_POST['last-name'];
     $email = $_POST['email'];
