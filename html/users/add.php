@@ -15,10 +15,10 @@ if (hasValue($_POST['first-name'])) {
     $hashedPw = hash('sha256', $password);
 
     if (hasValue($_POST['branch'])) {
-        $sth = $db->prepare("INSERT INTO `users` (`email`, `branch`, `first_name`, `last_name`, `password`, `zipcode`) VALUES (?, ?, ?, ?, ?)");
+        $sth = $db->prepare("INSERT INTO `users` (`email`, `branch`, `first_name`, `last_name`, `password`, `zipcode`) VALUES (?, ?, ?, ?, ?, ?)");
         $sth->execute([$email, $_POST['branch'], $first_name, $last_name, $hashedPw, $zipcode]);
     } else {
-        $sth = $db->prepare("INSERT INTO `users` (`email`, `first_name`, `last_name`, `password`, `zipcode`) VALUES (?, ?, ?, ?)");
+        $sth = $db->prepare("INSERT INTO `users` (`email`, `first_name`, `last_name`, `password`, `zipcode`) VALUES (?, ?, ?, ?, ?)");
         $sth->execute([$email, $first_name, $last_name, $hashedPw, $zipcode]);
     }
     if (!$sth) {
