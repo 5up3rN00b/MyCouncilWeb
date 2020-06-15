@@ -28,7 +28,7 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
         }
     }
 } else {
-
+    // TODO Add other get methods
 }
 
 //print_r($_POST);

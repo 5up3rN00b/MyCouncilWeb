@@ -27,4 +27,8 @@ function redirect($file) {
 function hasValue($value) {
     return isset($value) && !empty($value);
 }
-?>
+
+function execSql($db, $cmd) {
+    $sth = $db->prepare($cmd);
+    $sth->execute();
+}
