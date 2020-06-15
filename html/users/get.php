@@ -26,4 +26,4 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
 
 }
 
-//print_r($_POST);
+print_r($_POST);
