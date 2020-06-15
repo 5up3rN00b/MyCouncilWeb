@@ -22,7 +22,7 @@ if (hasValue($_POST['user-id'])) {
     $sth->execute();
     $passArr = $sth->fetchAll();
 
-    print_r($passArr);
+    echo $passArr[0][0];
 
-    execSql($db, "ROLLBACK;");
+    execSql($db, "COMMIT;");
 }
