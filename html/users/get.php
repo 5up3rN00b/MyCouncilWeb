@@ -23,3 +23,5 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
 } else {
 
 }
+
+print_r($_POST);

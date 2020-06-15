@@ -28,4 +28,4 @@ if (hasValue($_POST['first-name'])) {
     }
 }
 
-print_r($_POST);
+//print_r($_POST);
