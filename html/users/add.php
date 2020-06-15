@@ -27,3 +27,5 @@ if (hasValue($_POST['first-name'])) {
         echo 'Registered successfully';
     }
 }
+
+print_r($_POST);
