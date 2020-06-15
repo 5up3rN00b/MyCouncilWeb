@@ -1,6 +1,11 @@
 <?php
 require '../../templates/helper.php';
 
+$db = setupDb();
+if (!$db) {
+    die('Could not load database!');
+}
+
 if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
