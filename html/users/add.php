@@ -7,8 +7,8 @@ if (!$db) {
 }
 
 if (hasValue($_POST['first_name'])) {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
+    $first_name = $_POST['first-name'];
+    $last_name = $_POST['last-name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $zipcode = $_POST['zipcode'];
