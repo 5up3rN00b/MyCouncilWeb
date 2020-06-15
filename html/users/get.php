@@ -1,4 +1,6 @@
 <?php
+require '../../templates/helper.php';
+
 if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -24,4 +26,4 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
 
 }
 
-print_r($_POST);
+//print_r($_POST);
