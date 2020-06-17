@@ -12,6 +12,6 @@ if (hasValue($_GET['all'])) {
     $passArr = $sth->fetchAll();
 
     foreach ($passArr as $value) {
-        echo $value['post_id'] . '|' . $value['user_id'] . '|' . $value['title'] . '|' . $value['description'] . '|' . $value['upvotes'] . '|' . $value['downvotes'] . "<br>";
+        echo $value['post_id'] . '|' . $value['user_id'] . '|' . $value['title'] . '|' . $value['description'] . '|' . $value['upvotes'] . '|' . $value['downvotes'] . '|' . $value['branch'] . "<br>";
     }
 }

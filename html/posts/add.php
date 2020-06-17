@@ -12,11 +12,12 @@ if (hasValue($_POST['user-id'])) {
     $description = $_POST['description'];
     $upvotes = $_POST['upvotes'];
     $downvotes = $_POST['downvotes'];
+    $branch = $_POST['branch'];
 
     execSql($db, "START TRANSACTION;");
 
-    $sth = $db->prepare("INSERT INTO `posts` (`user_id`, `title`, `description`, `upvotes`, `downvotes`) VALUES (?, ?, ?, ?, ?)");
-    $sth->execute([$user_id, $title, $description, $upvotes, $downvotes]);
+    $sth = $db->prepare("INSERT INTO `posts` (`user_id`, `title`, `description`, `upvotes`, `downvotes`, `branch`) VALUES (?, ?, ?, ?, ?)");
+    $sth->execute([$user_id, $title, $description, $upvotes, $downvotes, $branch]);
 
     $sth = $db->prepare("SELECT LAST_INSERT_ID();");
     $sth->execute();
