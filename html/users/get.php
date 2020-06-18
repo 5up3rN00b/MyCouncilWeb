@@ -44,11 +44,7 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
         $passArr = $sth->fetchAll();
 
         foreach ($passArr as $value) {
-            if ($value['branch'] == 'None') {
-                echo 'Citizen' . ':' . $value['user_id'] . ':' . $value['email'] . ':' . $value['first_name'] . ':' . $value['last_name'] . ':' . $value['zipcode'];
-            } else {
-                echo 'Leader' . ':' . $value['user_id'] . ':' . $value['email'] . ':' . $value['branch'] . ':' . $value['first_name'] . ':' . $value['last_name'] . ':' . $value['zipcode'];
-            }
+            echo $value['user_id'] . '|' . $value['first_name'] . ' ' . $value['last_name'] . '<br>';
         }
     }
 
