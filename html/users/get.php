@@ -28,6 +28,16 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
         }
     }
 } else {
+    if (hasValue($_GET['id'])) {
+        $id = $_GET['id'];
+
+        $sth = $db->prepare("SELECT * FROM `users` WHERE `user_id`=?");
+        $sth->execute([$id]);
+        $passArr = $sth->fetchAll();
+
+        echo $passArr[0]['first_name'] . ':' . $passArr[0]['last_name'];
+    }
+
     // TODO Add other get methods
 }
 
