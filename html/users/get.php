@@ -38,6 +38,16 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
         echo $passArr[0]['first_name'] . ' ' . $passArr[0]['last_name'];
     }
 
+    if (hasValue($_GET['all'])) {
+        $sth = $db->prepare("SELECT * FROM `users`");
+        $sth->execute();
+        $passArr = $sth->fetchAll();
+
+        foreach ($passArr as $value) {
+            echo $value['user_id'] . '|' . $value['email'] . '|' . $value['first_name'] . ' ' . $value['last_name'] . '<br>';
+        }
+    }
+
     // TODO Add other get methods
 }
 
