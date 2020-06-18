@@ -35,7 +35,7 @@ if (hasValue($_POST['email']) && hasValue($_POST['password'])) {
         $sth->execute([$id]);
         $passArr = $sth->fetchAll();
 
-        echo $passArr[0]['first_name'] . ':' . $passArr[0]['last_name'];
+        echo $passArr[0]['first_name'] . ' ' . $passArr[0]['last_name'];
     }
 
     // TODO Add other get methods
