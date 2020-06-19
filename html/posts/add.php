@@ -29,6 +29,6 @@ if (hasValue($_POST['user-id'])) {
 }
 
 if (hasValue($_POST['updateVotes'])) {
-    $sth = $db->prepare("UPDATE `posts` SET (`upvotes`=`upvotes`+?, `downvotes`=`downvotes`+?) WHERE (`post_id`=?)");
+    $sth = $db->prepare("UPDATE `posts` SET `upvotes`=`upvotes`+?, `downvotes`=`downvotes`+? WHERE (`post_id`=?)");
     $sth->execute([$_POST['upvotes'], $_POST['downvotes'], $_POST['id']]);
 }
